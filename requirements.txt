@@ -1,0 +1,7 @@
+opencv-python>=3.4
+numpy
+dlib
+PyQt5
+vlc
+imutils
+math
