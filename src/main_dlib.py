@@ -46,21 +46,6 @@ class MainWindow(QMainWindow):
         def ear(eye):
             return (euclideanDist(eye[1], eye[5]) + euclideanDist(eye[2], eye[4])) / (2 * euclideanDist(eye[0], eye[3]))
 
-        def writeEyes(a, b, img):
-            y1 = max(a[1][1], a[2][1])
-            y2 = min(a[4][1], a[5][1])
-            x1 = a[0][0]
-            x2 = a[3][0]
-            cv2.imwrite('Images/left-eye.jpg', img[y1:y2, x1:x2])
-            y1 = max(b[1][1], b[2][1])
-            y2 = min(b[4][1], b[5][1])
-            x1 = b[0][0]
-            x2 = b[3][0]
-            cv2.imwrite('Images/right-eye.jpg', img[y1:y2, x1:x2])
-
-        # open_avg = train.getAvg()
-        # close_avg = train.getAvg()
-
         alert = vlc.MediaPlayer('alarm.wav')
         frame_thresh = 30
         close_thresh = 0.25  # adjust this value to change the sensitivity of the system
